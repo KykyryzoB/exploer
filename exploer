@@ -11055,9 +11055,6 @@ Main = (function()
       Explorer = 0, Properties = 1, Script_Viewer = 2,
     })
 
-    -- Fetch external deps
-    intro.SetProgress("Fetching API",0.35)
-    API = Main.FetchAPI()
     Lib.FastWait()
 
     -- Save external deps locally if needed
