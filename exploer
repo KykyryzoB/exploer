@@ -11056,7 +11056,7 @@ Main = (function()
     })
 
     -- Fetch version if needed
-    intro.SetProgress("Fetching Roblox Version",0.3)
+    intro.SetProgress("Fetching Roblox Version",0.7)
     if Main.Elevated then
       local fileVer = Lib.ReadFile("dex/deps_version.dat")
       Main.ClientVersion = Version()
