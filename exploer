@@ -11055,20 +11055,6 @@ Main = (function()
       Explorer = 0, Properties = 1, Script_Viewer = 2,
     })
 
-    -- Fetch version if needed
-    intro.SetProgress("Fetching Roblox Version",0.2)
-    if Main.Elevated then
-      local fileVer = Lib.ReadFile("dex/deps_version.dat")
-      Main.ClientVersion = Version()
-      if fileVer then
-        Main.DepsVersionData = string.split(fileVer,"\n")
-        if Main.LocalDepsUpToDate() then
-          Main.RobloxVersion = Main.DepsVersionData[2]
-        end
-      end
-      Main.RobloxVersion = Main.RobloxVersion or game:HttpGet("http://setup.roblox.com/versionQTStudio")
-    end
-
     -- Fetch external deps
     intro.SetProgress("Fetching API",0.35)
     API = Main.FetchAPI()
