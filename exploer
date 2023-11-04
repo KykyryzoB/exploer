@@ -11055,14 +11055,6 @@ Main = (function()
       Explorer = 0, Properties = 1, Script_Viewer = 2,
     })
 
-    -- Fetch external deps
-    intro.SetProgress("Fetching API",0.35)
-    API = Main.FetchAPI()
-    Lib.FastWait()
-    intro.SetProgress("Fetching RMD",0.5)
-    RMD = Main.FetchRMD()
-    Lib.FastWait()
-
     -- Save external deps locally if needed
     if Main.Elevated and env.writefile and not Main.LocalDepsUpToDate() then
       env.writefile("dex/deps_version.dat",Main.ClientVersion.."\n"..Main.RobloxVersion)
